@@ -7,16 +7,20 @@ void downloadReceiptAsTxt(List<MenuItem> items) {
   final buffer = StringBuffer();
 
   buffer.writeln("Receipt - ${timestamp.toLocal()}");
-  buffer.writeln("-----------------------------");
+  buffer.writeln("------------------------------");
+  buffer.writeln('-----------Sacctol------------');
+  buffer.writeln("---زوطر الشرقية-سنتر سويدان---");
+  buffer.writeln("----------81586334------------");
+  buffer.writeln("------------------------------");
 
   double total = 0.0;
   for (var item in items) {
-    buffer.writeln("${item.name}: \$${item.price.toStringAsFixed(2)}");
+    buffer.writeln("${item.name}: ${item.price} L.L");
     total += item.price;
   }
 
-  buffer.writeln("-----------------------------");
-  buffer.writeln("Total: \$${total.toStringAsFixed(2)}");
+  buffer.writeln("------------------------------");
+  buffer.writeln("Total: $total L.L");
 
   final content = buffer.toString();
   final blob = html.Blob([content]);

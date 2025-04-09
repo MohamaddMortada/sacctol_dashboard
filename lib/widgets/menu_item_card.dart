@@ -13,7 +13,7 @@ class MenuItemCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: ListTile(
         title: Text(item.name),
-        subtitle: Text('\$${item.price.toStringAsFixed(2)}'),
+        subtitle: Text('${item.price} L.L'),
         trailing: IconButton(
           icon: Icon(Icons.add),
           onPressed: onAdd,
