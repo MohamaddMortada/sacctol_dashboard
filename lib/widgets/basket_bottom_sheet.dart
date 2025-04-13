@@ -22,7 +22,7 @@ class BasketBottomSheet extends StatelessWidget {
           Divider(),
           ...basket.map((item) => ListTile(
                 title: Text(item.name),
-                trailing: Text('\$${item.price.toStringAsFixed(2)}'),
+                trailing: Text('${item.price} L.L'),
               )),
           Divider(),
           ListTile(
@@ -31,7 +31,7 @@ class BasketBottomSheet extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             trailing: Text(
-              '\$${total.toStringAsFixed(2)}',
+              '${total} L.L',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),

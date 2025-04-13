@@ -56,13 +56,13 @@ class _SavedReceiptsScreenState extends State<SavedReceiptsScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                           subtitle: Text(
-                            "Total: \$${receipt.total.toStringAsFixed(2)}",
+                            "Total: ${receipt.total} L.L",
                           ),
                           children: [
                             ...receipt.items.map((item) => ListTile(
                                   title: Text(item.name),
                                   trailing: Text(
-                                      "\$${item.price.toStringAsFixed(2)}"),
+                                      "${item.price} L.L"),
                                 )),
                             TextButton.icon(
                               onPressed: () => _deleteReceipt(receipt),
@@ -84,7 +84,7 @@ class _SavedReceiptsScreenState extends State<SavedReceiptsScreen> {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               trailing: Text(
-                "\$${_totalRevenue.toStringAsFixed(2)}",
+                "${_totalRevenue} L.L",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),

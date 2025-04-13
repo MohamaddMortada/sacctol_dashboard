@@ -10,13 +10,20 @@ class MenuItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      child: ListTile(
-        title: Text(item.name),
-        subtitle: Text('${item.price} L.L'),
-        trailing: IconButton(
-          icon: Icon(Icons.add),
-          onPressed: onAdd,
+      margin: const EdgeInsets.all(8),
+      elevation: 3,
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(item.name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+            Text('${item.price} L.L', style: TextStyle(fontSize: 14)),
+            ElevatedButton(
+              onPressed: onAdd,
+              child: Text('Add'),
+            ),
+          ],
         ),
       ),
     );

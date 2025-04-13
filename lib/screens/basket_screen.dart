@@ -44,11 +44,11 @@ class _BasketScreenState extends State<BasketScreen> {
               children: [
                 ...basket.map(
                   (item) =>
-                      Text('${item.name}: \$${item.price.toStringAsFixed(2)}'),
+                      Text('${item.name}: ${item.price} L.L'),
                 ),
                 Divider(),
                 Text(
-                  'Total: \$${total.toStringAsFixed(2)}',
+                  'Total: ${total} L.L',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
@@ -66,7 +66,7 @@ class _BasketScreenState extends State<BasketScreen> {
                   items: List.from(basket),
                 );
                 await ReceiptStorage().saveReceipt(receipt);
-                print("Receipt saved!"); // Check console
+                print("Receipt saved!");
                 Navigator.pop(context);
               },
               child: Text('Save'),
@@ -106,7 +106,7 @@ class _BasketScreenState extends State<BasketScreen> {
                     localBasket.map((item) {
                       return ListTile(
                         title: Text(item.name),
-                        subtitle: Text('\$${item.price.toStringAsFixed(2)}'),
+                        subtitle: Text('${item.price} L.L'),
                         trailing: IconButton(
                           icon: Icon(Icons.delete),
                           onPressed: () => _deleteItem(item),
@@ -118,7 +118,7 @@ class _BasketScreenState extends State<BasketScreen> {
         padding: const EdgeInsets.all(16.0),
         child: ListTile(
           title: Text(
-            'Total: \$${total.toStringAsFixed(2)}',
+            'Total: ${total} L.L',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),

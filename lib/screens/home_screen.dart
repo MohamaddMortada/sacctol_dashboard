@@ -11,24 +11,25 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<MenuItem> menuItems = [
-  // Hot Drinks
-  MenuItem(name: 'Espresso', category: 'Hot Drinks', price: 50000),
-  MenuItem(name: 'Espresso Macchiato', category: 'Hot Drinks', price: 100000),
-  MenuItem(name: 'Americano', category: 'Hot Drinks', price: 150000),
-  MenuItem(name: 'Passion Fruit', category: 'Hot Drinks', price: 100000),
-  MenuItem(name: 'Berries', category: 'Hot Drinks', price: 100000),
-  MenuItem(name: 'Green With Mint', category: 'Hot Drinks', price: 100000),
-  MenuItem(name: 'Lemon Ginger', category: 'Hot Drinks', price: 100000),
-  MenuItem(name: 'Hot Chocolate', category: 'Hot Drinks', price: 200000),
-  MenuItem(name: 'Bubble Gum', category: 'Hot Drinks', price: 200000),
-  MenuItem(name: 'Strawberry', category: 'Hot Drinks', price: 200000),
 
-  // Latte
-  MenuItem(name: 'Tiramisu', category: 'Latte', price: 200000),
-  MenuItem(name: 'Caramel', category: 'Latte', price: 200000),
-  MenuItem(name: 'Chocolate', category: 'Latte', price: 200000),
-  MenuItem(name: 'Cookie', category: 'Latte', price: 200000),
-  MenuItem(name: 'Speculoos', category: 'Latte', price: 200000),
+    // Ice Cream
+  MenuItem(name: 'Small Cone', category: 'Ice Cream', price: 100000),
+  MenuItem(name: 'Mix Cone', category: 'Ice Cream', price: 250000),
+  MenuItem(name: 'Large Cone', category: 'Ice Cream', price: 250000),
+  MenuItem(name: 'One Boule', category: 'Ice Cream', price: 100000),
+  MenuItem(name: 'Achta Cone', category: 'Ice Cream', price: 300000),
+  MenuItem(name: '500 G Mix', category: 'Ice Cream', price: 450000),
+  MenuItem(name: '1kg Mix', category: 'Ice Cream', price: 1123750), // 12.5$
+  MenuItem(name: '1kg Achta', category: 'Ice Cream', price: 1258000), // 14$
+
+    // Crepe
+  MenuItem(name: 'Nutella', category: 'Crepe', price: 300000),
+  MenuItem(name: 'Kinder', category: 'Crepe', price: 350000),
+  MenuItem(name: 'Lotus', category: 'Crepe', price: 350000),
+  MenuItem(name: "Hershey's", category: 'Crepe', price: 350000),
+  MenuItem(name: 'Sushi Crepe', category: 'Crepe', price: 72000),  // 0.8$
+  MenuItem(name: 'Fettuccine', category: 'Crepe', price: 450000),
+  MenuItem(name: 'Pancake', category: 'Crepe', price: 450000),
 
   // Frappe
   MenuItem(name: 'Caramel M', category: 'Frappe', price: 250000),
@@ -44,14 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Coffee Lovers M', category: 'Frappe', price: 250000),
   MenuItem(name: 'Coffee Lovers L', category: 'Frappe', price: 350000),
 
-  // Crepe
-  MenuItem(name: 'Nutella', category: 'Crepe', price: 300000),
-  MenuItem(name: 'Kinder', category: 'Crepe', price: 350000),
-  MenuItem(name: 'Lotus', category: 'Crepe', price: 350000),
-  MenuItem(name: "Hershey's", category: 'Crepe', price: 350000),
-  MenuItem(name: 'Sushi Crepe', category: 'Crepe', price: 72000),  // 0.8$
-  MenuItem(name: 'Fettuccine', category: 'Crepe', price: 450000),
-  MenuItem(name: 'Pancake', category: 'Crepe', price: 450000),
 
   // Milkshakes
   MenuItem(name: 'Strawberry M', category: 'Milkshakes', price: 250000),
@@ -104,15 +97,6 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Carrot 1L', category: 'Fresh Juices', price: 269700), // 3$
   MenuItem(name: 'Achta sa7en', category: 'Fresh Juices', price: 449000), // 5$
 
-  // Ice Cream
-  MenuItem(name: 'Small Cone', category: 'Ice Cream', price: 100000),
-  MenuItem(name: 'Mix Cone', category: 'Ice Cream', price: 250000),
-  MenuItem(name: 'Large Cone', category: 'Ice Cream', price: 250000),
-  MenuItem(name: 'One Boule', category: 'Ice Cream', price: 100000),
-  MenuItem(name: 'Achta Cone', category: 'Ice Cream', price: 300000),
-  MenuItem(name: '500 G Mix', category: 'Ice Cream', price: 450000),
-  MenuItem(name: '1kg Mix', category: 'Ice Cream', price: 1123750), // 12.5$
-  MenuItem(name: '1kg Achta', category: 'Ice Cream', price: 1258000), // 14$
 
   // Candies
   MenuItem(name: '150g', category: 'Candies', price: 100000),
@@ -128,9 +112,26 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Lotus Cup', category: 'Merry Cream', price: 200000),
   MenuItem(name: 'Strawberry Cup', category: 'Merry Cream', price: 200000),
   MenuItem(name: 'Kinder Cup', category: 'Merry Cream', price: 250000),
+
+  // Hot Drinks
+  MenuItem(name: 'Espresso', category: 'Hot Drinks', price: 50000),
+  MenuItem(name: 'Espresso Macchiato', category: 'Hot Drinks', price: 100000),
+  MenuItem(name: 'Americano', category: 'Hot Drinks', price: 150000),
+  MenuItem(name: 'Passion Fruit', category: 'Hot Drinks', price: 100000),
+  MenuItem(name: 'Berries', category: 'Hot Drinks', price: 100000),
+  MenuItem(name: 'Green With Mint', category: 'Hot Drinks', price: 100000),
+  MenuItem(name: 'Lemon Ginger', category: 'Hot Drinks', price: 100000),
+  MenuItem(name: 'Hot Chocolate', category: 'Hot Drinks', price: 200000),
+  MenuItem(name: 'Bubble Gum', category: 'Hot Drinks', price: 200000),
+  MenuItem(name: 'Strawberry', category: 'Hot Drinks', price: 200000),
+
+  // Latte
+  MenuItem(name: 'Tiramisu', category: 'Latte', price: 200000),
+  MenuItem(name: 'Caramel', category: 'Latte', price: 200000),
+  MenuItem(name: 'Chocolate', category: 'Latte', price: 200000),
+  MenuItem(name: 'Cookie', category: 'Latte', price: 200000),
+  MenuItem(name: 'Speculoos', category: 'Latte', price: 200000),
 ];
-
-
   final List<MenuItem> basket = [];
 
   void addToBasket(MenuItem item) {
@@ -157,33 +158,35 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final categories = menuItems.map((e) => e.category).toSet().toList();
+    final screenWidth = MediaQuery.of(context).size.width;
+    final itemWidth = 160.0;
+    final itemHeight = 200.0;
+    final crossAxisCount = (screenWidth / itemWidth).floor();
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Menu Basket App'),
-        actions: [Row(children: [
+        actions: [
           IconButton(
-  icon: Icon(Icons.receipt),
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => SavedReceiptsScreen()),
-    );
-  },
-),
-
-
+            icon: Icon(Icons.receipt),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => SavedReceiptsScreen()),
+              );
+            },
+          ),
           IconButton(
             icon: Icon(Icons.shopping_basket),
             onPressed: showBasket,
-          )],)
+          )
         ],
       ),
       body: ListView(
         children: categories.map((category) {
-          final items = menuItems
-              .where((item) => item.category == category)
-              .toList();
+          final items = menuItems.where((item) => item.category == category).toList();
+          final rows = (items.length / crossAxisCount).ceil();
+
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -198,10 +201,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              ...items.map((item) => MenuItemCard(
-                    item: item,
-                    onAdd: () => addToBasket(item),
-                  )),
+              SizedBox(
+                height: rows * itemHeight,
+                child: GridView.count(
+                  crossAxisCount: crossAxisCount,
+                  childAspectRatio: itemWidth / itemHeight,
+                  physics: NeverScrollableScrollPhysics(),
+                  children: items.map((item) {
+                    return Center(
+                      child: SizedBox(
+                        width: itemWidth,
+                        height: itemHeight,
+                        child: MenuItemCard(
+                          item: item,
+                          onAdd: () => addToBasket(item),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
             ],
           );
         }).toList(),
