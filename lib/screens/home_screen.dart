@@ -19,8 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'One Boule', category: 'Ice Cream', price: 100000),
   MenuItem(name: 'Achta Cone', category: 'Ice Cream', price: 300000),
   MenuItem(name: '500 G Mix', category: 'Ice Cream', price: 450000),
-  MenuItem(name: '1kg Mix', category: 'Ice Cream', price: 1123750), // 12.5$
-  MenuItem(name: '1kg Achta', category: 'Ice Cream', price: 1258000), // 14$
+  MenuItem(name: '1kg Mix', category: 'Ice Cream', price: 1000080), // 12
+  MenuItem(name: '1kg Achta', category: 'Ice Cream', price: 1260000),
+  MenuItem(name: 'Add ons', category: 'Ice Cream', price: 50000),
 
     // Crepe
   MenuItem(name: 'Nutella', category: 'Crepe', price: 300000),
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Sushi Crepe', category: 'Crepe', price: 72000),  // 0.8$
   MenuItem(name: 'Fettuccine', category: 'Crepe', price: 450000),
   MenuItem(name: 'Pancake', category: 'Crepe', price: 450000),
+  MenuItem(name: 'Addons', category: 'Crepe', price: 50000),
 
   // Frappe
   MenuItem(name: 'Caramel M', category: 'Frappe', price: 250000),
@@ -44,6 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Irish L', category: 'Frappe', price: 350000),
   MenuItem(name: 'Coffee Lovers M', category: 'Frappe', price: 250000),
   MenuItem(name: 'Coffee Lovers L', category: 'Frappe', price: 350000),
+  MenuItem(name: 'Add ons', category: 'Crepe', price: 50000),
+
 
 
   // Milkshakes
@@ -61,6 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Bubble Gum L', category: 'Milkshakes', price: 350000),
   MenuItem(name: 'Protien M', category: 'Milkshakes', price: 250000),
   MenuItem(name: 'Protien L', category: 'Milkshakes', price: 350000),
+  MenuItem(name: 'Add ons', category: 'Milkshakes', price: 50000),
+  
 
   // Smoothies
   MenuItem(name: 'Strawberry M', category: 'Smoothies', price: 200000),
@@ -73,29 +79,31 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Lemonade L', category: 'Smoothies', price: 300000),
   MenuItem(name: 'Minted Lemonade M', category: 'Smoothies', price: 250000),
   MenuItem(name: 'Minted Lemonade L', category: 'Smoothies', price: 350000),
+  MenuItem(name: 'Add ons', category: 'Smoothies', price: 50000),
 
   // Fresh Juices
-  MenuItem(name: 'Avoca M', category: 'Fresh Juices', price: 395000), // 4.4$
-  MenuItem(name: 'Avoca L', category: 'Fresh Juices', price: 449000), // 5$
+  MenuItem(name: 'Avoca M', category: 'Fresh Juices', price: 400000), // 4.4$
+  MenuItem(name: 'Avoca L', category: 'Fresh Juices', price: 450000), // 5$
   MenuItem(name: 'Avoca 1L', category: 'Fresh Juices', price: 720000), // 8$
-  MenuItem(name: 'Cocktail She2af M', category: 'Fresh Juices', price: 395000), // 4.4$
-  MenuItem(name: 'Cocktail She2af L', category: 'Fresh Juices', price: 449000), // 5$
-  MenuItem(name: 'Cocktail M', category: 'Fresh Juices', price: 197000), // 2.2$
-  MenuItem(name: 'Cocktail L', category: 'Fresh Juices', price: 296000), // 3.3$
-  MenuItem(name: 'Cocktail 1L', category: 'Fresh Juices', price: 449000), // 5$
-  MenuItem(name: 'Strawberry M', category: 'Fresh Juices', price: 152000), // 1.7$
-  MenuItem(name: 'Strawberry L', category: 'Fresh Juices', price: 197000), // 2.2$
+  MenuItem(name: 'Cocktail She2af M', category: 'Fresh Juices', price: 400000), // 4.4$
+  MenuItem(name: 'Cocktail She2af L', category: 'Fresh Juices', price: 450000), // 5$
+  MenuItem(name: 'Cocktail M', category: 'Fresh Juices', price: 200000), // 2.2$
+  MenuItem(name: 'Cocktail L', category: 'Fresh Juices', price: 300000), // 3.3$
+  MenuItem(name: 'Cocktail 1L', category: 'Fresh Juices', price: 450000), // 5$
+  MenuItem(name: 'Strawberry M', category: 'Fresh Juices', price: 150000), // 1.7$
+  MenuItem(name: 'Strawberry L', category: 'Fresh Juices', price: 200000), // 2.2$
   MenuItem(name: 'Strawberry 1L', category: 'Fresh Juices', price: 300000), // 3.33$
-  MenuItem(name: 'Mango M', category: 'Fresh Juices', price: 152000), // 1.7$
-  MenuItem(name: 'Mango L', category: 'Fresh Juices', price: 197000), // 2.2$
-  MenuItem(name: 'Mango 1L', category: 'Fresh Juices', price: 341000), // 3.8$
+  MenuItem(name: 'Mango M', category: 'Fresh Juices', price: 150000), // 1.7$
+  MenuItem(name: 'Mango L', category: 'Fresh Juices', price: 200000), // 2.2$
+  MenuItem(name: 'Mango 1L', category: 'Fresh Juices', price: 345000), // 3.8$
   MenuItem(name: 'Orange M', category: 'Fresh Juices', price: 98000), // 1.1$
   MenuItem(name: 'Orange L', category: 'Fresh Juices', price: 150000), // 1.66$
-  MenuItem(name: 'Orange 1L', category: 'Fresh Juices', price: 269700), // 3$
-  MenuItem(name: 'Carrot M', category: 'Fresh Juices', price: 98890), // 1.1$
+  MenuItem(name: 'Orange 1L', category: 'Fresh Juices', price: 270000), // 3$
+  MenuItem(name: 'Carrot M', category: 'Fresh Juices', price: 100000), // 1.1$
   MenuItem(name: 'Carrot L', category: 'Fresh Juices', price: 150000), // 1.66$
-  MenuItem(name: 'Carrot 1L', category: 'Fresh Juices', price: 269700), // 3$
-  MenuItem(name: 'Achta sa7en', category: 'Fresh Juices', price: 449000), // 5$
+  MenuItem(name: 'Carrot 1L', category: 'Fresh Juices', price: 270000), // 3$
+  MenuItem(name: 'Achta sa7en', category: 'Fresh Juices', price: 450000),
+  MenuItem(name: 'Add ons', category: 'Fresh Juices', price: 50000),
 
 
   // Candies
@@ -112,6 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Lotus Cup', category: 'Merry Cream', price: 200000),
   MenuItem(name: 'Strawberry Cup', category: 'Merry Cream', price: 200000),
   MenuItem(name: 'Kinder Cup', category: 'Merry Cream', price: 250000),
+  MenuItem(name: 'Add ons', category: 'Merry Cream', price: 50000),
 
   // Hot Drinks
   MenuItem(name: 'Espresso', category: 'Hot Drinks', price: 50000),
@@ -124,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Hot Chocolate', category: 'Hot Drinks', price: 200000),
   MenuItem(name: 'Bubble Gum', category: 'Hot Drinks', price: 200000),
   MenuItem(name: 'Strawberry', category: 'Hot Drinks', price: 200000),
+  MenuItem(name: 'Add ons', category: 'Hot Drinks', price: 50000),
 
   // Latte
   MenuItem(name: 'Tiramisu', category: 'Latte', price: 200000),
@@ -131,6 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
   MenuItem(name: 'Chocolate', category: 'Latte', price: 200000),
   MenuItem(name: 'Cookie', category: 'Latte', price: 200000),
   MenuItem(name: 'Speculoos', category: 'Latte', price: 200000),
+  MenuItem(name: 'Add ons', category: 'Latte', price: 50000),
 ];
   final List<MenuItem> basket = [];
 

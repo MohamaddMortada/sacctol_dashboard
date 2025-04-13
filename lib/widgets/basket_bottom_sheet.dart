@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart'; 
 import 'package:sacctol_dashboard/models/menu_item.dart';
 
 class BasketBottomSheet extends StatelessWidget {
@@ -9,6 +10,7 @@ class BasketBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double total = basket.fold(0, (sum, item) => sum + item.price);
+    final formatter = NumberFormat('#,###');
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -22,7 +24,7 @@ class BasketBottomSheet extends StatelessWidget {
           Divider(),
           ...basket.map((item) => ListTile(
                 title: Text(item.name),
-                trailing: Text('${item.price} L.L'),
+                trailing: Text('${formatter.format(item.price)} L.L'),
               )),
           Divider(),
           ListTile(
@@ -31,7 +33,7 @@ class BasketBottomSheet extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             trailing: Text(
-              '${total} L.L',
+              '${formatter.format(total)} L.L',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),

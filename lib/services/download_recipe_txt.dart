@@ -6,7 +6,7 @@ void downloadReceiptAsTxt(List<MenuItem> items) {
   final timestamp = DateTime.now();
   final buffer = StringBuffer();
   final formatter = NumberFormat("#,###");
-  const width = 20;
+  const width = 18;
 
   // Header
   buffer.writeln(centerText("SACCTOL", width));
@@ -27,7 +27,7 @@ void downloadReceiptAsTxt(List<MenuItem> items) {
   buffer.writeln(repeat("", width));
   buffer.writeln(repeat("-", width));
   buffer.writeln(repeat("", width));
-  buffer.writeln(padBoth("TOTAL", "${formatter.format(total)}", width));
+  buffer.writeln(padBoth("TOTAL", "${formatter.format(total)} L.L", width));
   buffer.writeln(repeat("", width));
   buffer.writeln(repeat("-", width));
   buffer.writeln(repeat("", width));
@@ -48,7 +48,7 @@ void downloadReceiptAsTxt(List<MenuItem> items) {
 }
 
 String formatItemLine(String name, double price, NumberFormat formatter, int width) {
-  final priceStr = "${formatter.format(price)}";
+  final priceStr = "${formatter.format(price)} L.L";
   final availableWidth = width - priceStr.length - 1;
 
   String trimmedName = name;

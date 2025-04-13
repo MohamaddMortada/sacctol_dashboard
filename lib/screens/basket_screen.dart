@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:sacctol_dashboard/models/menu_item.dart';
 import 'package:sacctol_dashboard/models/recipe.dart';
 import 'package:sacctol_dashboard/services/download_recipe_txt.dart';
@@ -16,6 +17,7 @@ class BasketScreen extends StatefulWidget {
 
 class _BasketScreenState extends State<BasketScreen> {
   late List<MenuItem> localBasket;
+  final formatter = NumberFormat('#,###');
 
   @override
   void initState() {
@@ -44,11 +46,11 @@ class _BasketScreenState extends State<BasketScreen> {
               children: [
                 ...basket.map(
                   (item) =>
-                      Text('${item.name}: ${item.price} L.L'),
+                      Text('${item.name}: ${formatter.format(item.price)} L.L'),
                 ),
                 Divider(),
                 Text(
-                  'Total: ${total} L.L',
+                  'Total: ${formatter.format(total)} L.L',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
@@ -71,7 +73,6 @@ class _BasketScreenState extends State<BasketScreen> {
               },
               child: Text('Save'),
             ),
-
             TextButton(
               onPressed: () {
                 downloadReceiptAsTxt(basket);
@@ -92,33 +93,36 @@ class _BasketScreenState extends State<BasketScreen> {
       appBar: AppBar(
         title: Text("Your Basket"),
         actions: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: const Color.fromARGB(255, 0, 93, 3)),
+            child: 
           TextButton(
             onPressed: () => _showReceiptDialog(context, localBasket),
-            child: Text("Print Receipt", style: TextStyle(color: Colors.white)),
-          ),
+            child: Text("Print Receipt", style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255))),
+          )),
         ],
       ),
-      body:
-          localBasket.isEmpty
-              ? Center(child: Text("Basket is empty"))
-              : ListView(
-                children:
-                    localBasket.map((item) {
-                      return ListTile(
-                        title: Text(item.name),
-                        subtitle: Text('${item.price} L.L'),
-                        trailing: IconButton(
-                          icon: Icon(Icons.delete),
-                          onPressed: () => _deleteItem(item),
-                        ),
-                      );
-                    }).toList(),
-              ),
+      body: localBasket.isEmpty
+          ? Center(child: Text("Basket is empty"))
+          : ListView(
+              children: localBasket.map((item) {
+                return ListTile(
+                  title: Text(item.name),
+                  subtitle: Text('${formatter.format(item.price)} L.L'),
+                  trailing: IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: () => _deleteItem(item),
+                  ),
+                );
+              }).toList(),
+            ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListTile(
           title: Text(
-            'Total: ${total} L.L',
+            'Total: ${formatter.format(total)} L.L',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),

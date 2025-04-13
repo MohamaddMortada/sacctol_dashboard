@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:sacctol_dashboard/models/recipe.dart';
 import 'package:sacctol_dashboard/services/recipe_storage.dart';
 
@@ -10,6 +11,7 @@ class SavedReceiptsScreen extends StatefulWidget {
 class _SavedReceiptsScreenState extends State<SavedReceiptsScreen> {
   List<Receipt> _receipts = [];
   double _totalRevenue = 0.0;
+  final formatter = NumberFormat('#,###');
 
   @override
   void initState() {
@@ -19,7 +21,6 @@ class _SavedReceiptsScreenState extends State<SavedReceiptsScreen> {
 
   Future<void> _loadReceipts() async {
     final receipts = await ReceiptStorage().getReceipts();
-
     final total = await ReceiptStorage().getTotalRevenue();
 
     setState(() {
@@ -56,13 +57,12 @@ class _SavedReceiptsScreenState extends State<SavedReceiptsScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                           subtitle: Text(
-                            "Total: ${receipt.total} L.L",
+                            "Total: ${formatter.format(receipt.total)} L.L",
                           ),
                           children: [
                             ...receipt.items.map((item) => ListTile(
                                   title: Text(item.name),
-                                  trailing: Text(
-                                      "${item.price} L.L"),
+                                  trailing: Text("${formatter.format(item.price)} L.L"),
                                 )),
                             TextButton.icon(
                               onPressed: () => _deleteReceipt(receipt),
@@ -84,7 +84,7 @@ class _SavedReceiptsScreenState extends State<SavedReceiptsScreen> {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               trailing: Text(
-                "${_totalRevenue} L.L",
+                "${formatter.format(_totalRevenue)} L.L",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
